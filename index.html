@@ -25,8 +25,326 @@
 
 		<div class="reveal">
 			<div class="slides">
-				<section>
+				<section data-markdown data-background-image="images/18F_floor_long.JPG">
+					<script type="text/template">
+						# Visit to 18F
+						June 2016
 
+						![QR Code](images/QR.png)
+
+						[@raphaeltanyw](https://github.com/raphaeltanyw)
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						Thanks Parimal!
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						![](images/cloudgov.png)
+
+						![](images/micropurchase.png)
+					</script>
+				</section>
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							# 18F?
+							Not my age and gender <!-- .element: class="fragment" -->
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## 18F
+							![](images/18F_floor_small.png)
+							- Part of General Services Administration (GSA)
+							- Office similar to GDS
+							- Cost recovery model
+							- Offices in D.C., NYC, SF, Chicago, Dayton
+						</script>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							# cloud.gov
+							![](images/cloudgov.png)
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Problem
+							- Every product owned by agencies has their own stack
+							- Manage the entire stack (baremetal to lines of code)
+							- **Proof of compliance to get Approval to Operate (ATO)**
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### IM8
+							- 100+ pages of reading material
+
+							<img src="images/document.svg" width="12" height="12" />
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							![](images/im8_course.png)
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### Federal Risk and Authorization Management Program (FedRAMP)
+							- 200 - 1000 pages of proof
+
+							<img src="images/document.svg" width="120" height="120" />
+
+							Wait... proof? 🤔 <!-- .element: class="fragment" -->
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### Federal Risk and Authorization Management Program (FedRAMP)
+							4,000+ pages of reading material
+
+							<img src="images/document.svg" width="500" height="500" />
+						</script>
+					</section>
+					<section data-markdown data-background-image="images/what.gif">
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## cloud.gov
+							- PaaS
+							- Built on Pivotal Cloud Foundry
+							- Using AWS as IaaS
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							![](images/cloudgov_pyramid.png)
+							https://youtu.be/nCycNkxs-rE
+							https://youtu.be/UwOG3BrdODo
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							What about that insane amount of compliance documentation?
+
+							Well... someone still has to do it. <!-- .element: class="fragment" -->
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## cloud.gov: FedRAMP Compliance
+							- Aiming to be fully FedRAMP compliant
+							- Drastically reduce the amount of documentation other agencies are required to produce
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## cloud.gov: FedRAMP Compliance
+							- Compliance Masonry
+								- Compliance as code (yml)
+								- https://compliance.cloud.gov/
+								- https://github.com/18F/cg-compliance
+
+							- BDD tests
+								- Verify actual compliance
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## cloud.gov
+							- Less resources needed to manage the entire stack
+							- More resources to innovate and improve upon the product
+						</script>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							# Micropurchase platform
+							![](images/micropurchase.png)
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Problem
+							- Micropurchase == Small Value Purchase (SVP)
+							- <= $3,500
+
+							![](images/creditcard.png)
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Problem
+							- Mostly used for physical equipment
+								- Macbooks, monitors, etc
+
+							- Nobody uses it for small, custom software? <!-- .element: class="fragment" -->
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Micropurchase platform
+							How does it work? <!-- .element: class="fragment" -->
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							![](images/auction_example.png)
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Auctions
+							2 types of auctions
+							- Reverse
+							- Sealed-bid
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Reverse auction
+							1. Problem description, rules and acceptance criteria posted
+							2. Auction starts at $3,500
+							3. Interested parties bid to get the lowest bid
+							4. Bidders are able are notified if they are in the lead, and are able to bid again
+							4. Auction closes, winning bidder gets amount of time as stated in the rules to complete the task
+							5. Winning bidder submits a pull request to be reviewed
+							6. Winning bidder gets paid if pull request is accepted
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Sealed-bid
+							1. Problem description, rules and acceptance criteria posted
+							2. Auction starts at $3,500
+							3. Interested parties bid to get the lowest bid
+							4. Bidders can only bid once, not notified until end of auction <!-- .element: class="fragment highlight-blue" -->
+							4. Auction closes, winning bidder gets amount of time as stated in the rules to complete the task
+							5. Winning bidder submits a pull request to be reviewed
+							6. Winning bidder gets paid if pull request is accepted
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Learnings
+							- Open sourcing project gives potential vendors ability to make more informed bidding decisions
+								- **NOT** going to consider closed-source on this platform
+							- Ability to do code review ensures quality of code in the project
+							- Rules and acceptance criteria are not perfect
+								- Iterate and improve on these
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Future plans
+							- Overcome CC-only payment
+								- Currently, winning bidders have to use Stripe
+								- Potentially PayPal?
+								- Process change
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Future plans
+							- Next tier of purchasing power ($15,000)
+								- More paperwork required
+								- Possibly automate paperwork to a single click?
+								- Process change
+						</script>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							# General observations
+
+							![](images/general.png)
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Agile and Open Source
+							- HealthCare.gov
+								- Helped make the push for Agile and Open Source easier
+
+							- Open Government National Action Plan and Source Code Policy
+								- https://github.com/WhiteHouse/source-code-policy
+								- Default to open source for custom software
+						</script>
+					</section>
+					<section>
+						<blockquote cite="Someone Up There">
+							&ldquo;I've yet to see a piece of software that has no bugs in it.&rdquo;
+						</blockquote>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Embrace the possibility of bugs
+							- Nothing is 100% secure
+							- Speed is the new security
+							- Bugs within Micropurchase platform
+								- Issue raised in GitHub
+								- Deployed a fix ASAP
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Working with agencies
+							- Identify open-source/agile champions
+								- Have them as your POC
+								- Easier to convince the rest of their team
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Products
+							- Conceptualized from an already existing problem
+								- Cloud.gov
+									- Solves slow and painful deployment iterations, etc
+								- Micropurchase platform
+									- Solves difficulty of buying small custom software
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Products
+							- Aligned to to a common goal and vision
+								- Cloud.gov
+									- Reduces deployment iterations, improves transition to Agile
+								- Micropurchase platform
+									- Encourages gov interaction with open-source community, increase viability of open sourcing
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Special teams
+							- Outreach
+							- Writing lab
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Other Agencies
+							- Veteran Affairs
+							- Education
+							- Immigration
+								- Identity + Security + Legal
+						</script>
+					</section>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						# Thanks!
+						Questions?
+
+						![](images/awake.gif)
+					</script>
 				</section>
 			</div>
 		</div>
